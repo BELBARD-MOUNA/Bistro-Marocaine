@@ -1,0 +1,261 @@
+/* Styles généraux */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h5 {
+    font-weight: bold;
+}
+
+p {
+    line-height: 1.6;
+}
+
+/* En-tête */
+.navbar {
+    background-color: #ff9800; /* Couleur personnalisée */
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+}
+
+.navbar-nav .nav-link {
+    color: white;
+    font-size: 1.1rem;
+    padding-right: 1rem;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #ffe0b2; /* Effet survol */
+}
+
+/* Section Héros */
+.hero {
+    height: 500px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero button {
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    background-color: #ff9800;
+    border: none;
+    color: white;
+}
+
+.hero button:hover {
+    background-color: #e67e22;
+}
+
+/* Section Menu */
+.container h2 {
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+    color: #ff9800;
+}
+
+.card {
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border: none;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-title {
+    font-size: 1.5rem;
+    color: #ff9800;
+}
+
+.card-text {
+    font-size: 1rem;
+    color: #555;
+}
+
+.text-muted {
+    color: #777;
+}
+
+/* Section À propos de nous */
+.row img {
+    border-radius: 5px;
+    max-height: 400px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.row h2 {
+    font-size: 2.5rem;
+    color: #ff9800;
+}
+
+.row p {
+    font-size: 1.2rem;
+    color: #555;
+}
+
+/* Section Contact */
+form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+form label {
+    font-weight: bold;
+    color: #333;
+}
+
+form .form-control {
+    margin-bottom: 1rem;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+form button {
+    background-color: #ff9800;
+    border: none;
+    padding: 10px 15px;
+    color: white;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #e67e22;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+}
+
+footer a {
+    color: #ff9800;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #e67e22;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Réactivité (responsive) */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero button {
+        font-size: 1rem;
+        padding: 8px 16px;
+    }
+
+    .row img {
+        max-height: 300px;
+    }
+
+    .card {
+        margin-bottom: 1rem;
+    }
+}
+
+button {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background: #000;
+}
+
+.glow-on-hover {
+    width: 220px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+}
+
+.glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.glow-on-hover:active {
+    color: #000
+}
+
+.glow-on-hover:active:after {
+    background: transparent;
+}
+
+.glow-on-hover:hover:before {
+    opacity: 1;
+}
+
+.glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
